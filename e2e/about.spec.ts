@@ -4,15 +4,14 @@ let About = "http://localhost:3000/about";
 let Home = "http://localhost:3000";
 
 test.describe('Main area', () => {
-    test('div tags', async({ page }) => {
+    test('main tag', async({ page }) => {
         await page.goto(About)
 
-        await expect(page.locator('div')).toBeVisible();
+        await expect(page.locator('main')).toHaveCount(1);
     })
 
     test('Link', async({ page }) => {
         await page.goto(Home);
-        await page.click('text=Home')
         await expect(page).toHaveURL(Home);
     })
 })

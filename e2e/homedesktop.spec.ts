@@ -9,7 +9,7 @@ test.describe('Testing for home desktop', () => {
 test('testing for background overlay on desktop', async ({ page }) => {
   await page.goto('http://localhost:3000/');
 
-    const mainContainer = page.locator('.main');
+    const mainContainer = page.locator('.main::before');
 
     const checkingBackgroundColour = await mainContainer.evaluate((ele) => {
     return window.getComputedStyle(ele).getPropertyValue("background-color")
@@ -25,7 +25,7 @@ test.describe('Testing for home desktop', () => {
     test('testing for background opacity on desktop', async ({ page }) => {
       await page.goto('http://localhost:3000/');
     
-        const mainContainer = page.locator('.main');
+        const mainContainer = page.locator('.main::before');
     
         const checkingOpacity = await mainContainer.evaluate((ele) => {
         return window.getComputedStyle(ele).getPropertyValue("opacity")
