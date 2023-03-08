@@ -5,6 +5,7 @@ import styles from '@/styles/About.module.css'
 import Text from '@/components/text'
 import record from '../data/artists.json'
 import Link from 'next/link'
+import BackToTop from '@/components/backtotop'
 import { useState, useEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -62,6 +63,7 @@ export default function About() {
               )
             })
           }
+          <BackToTop />
         </div>
       </main>
     </>
